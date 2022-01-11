@@ -1,5 +1,5 @@
 import React from 'react'
-import * as useHover from '../../src/hooks'
+import * as useHover from '../../src/hooks/useHover.js'
 import * as restore from '../../src/hooks'
 
 import TileSelector from '../../src/components/TileSelector'

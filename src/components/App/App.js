@@ -12,7 +12,7 @@ class App extends Component{
     //this.state = {numTiles: 36, playing: false, previousTileIndex: null, tiles:[], toBeCleared:null};
     this.state={};
     this.state = {numTiles: 36, playing: false, previousTileIndex: null, tiles:[], toBeCleared:null};
-  }
+  }  
 
   handleTileClicked(id, color){
     this.setState((state) => {
@@ -56,13 +56,17 @@ class App extends Component{
       //{playing:true, previousTileIndex:null, toBeCleared:null, tiles:createTiles(numTiles)});
   }
 
+  handleNumTileChange = (num) => {
+    this.setState((state) => {state.numTiles= num, state.playing=false, state.tiles=[]});
+  }
+
   render() {
   return (
     <div className="App">
       <header className="App-header">
         Turbo-Matcher
       </header>
-        <OptionsPanel playing={this.state.playing} numTiles={this.state.numTiles} startGame={this.startGame}/>
+        <OptionsPanel playing={this.state.playing} numTiles={this.state.numTiles} startGame={this.startGame} handleNumTileChange={this.handleNumTileChange}/>
         <Board numTiles={this.state.numTiles} tiles={this.state.tiles}/>      
     </div>
   );
