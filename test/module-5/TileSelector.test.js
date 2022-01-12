@@ -23,7 +23,7 @@ describe('TileSelector', () => {
         Provider: MockProvider
       }
 
-      useHover = require('../../refactor/hooks')
+      useHover = require('../../refactor/hooks/useHover')
       useHover.default = jest.fn()
       useHover.default.mockReturnValue([() => 'ref', true])
 
